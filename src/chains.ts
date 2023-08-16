@@ -16,7 +16,8 @@ export enum ChainId {
   AVALANCHE = 43114,
   BASE_GOERLI = 84531,
   BASE = 8453,
-  SCROLL_TESTNET = 534353,
+  SCROLL_ALPHA = 534353,
+  SCROLL_SEPOLIA = 534351
 }
 
 export const SUPPORTED_CHAINS = [
@@ -35,9 +36,10 @@ export const SUPPORTED_CHAINS = [
   ChainId.AVALANCHE,
   ChainId.BASE,
   ChainId.BASE_GOERLI,
-  ChainId.SCROLL_TESTNET,
+  ChainId.SCROLL_ALPHA,
+  ChainId.SCROLL_SEPOLIA
 ] as const
-export type SupportedChainsType = (typeof SUPPORTED_CHAINS)[number]
+export type SupportedChainsType = typeof SUPPORTED_CHAINS[number]
 
 export enum NativeCurrencyName {
   // Strings match input for CLI
@@ -47,5 +49,5 @@ export enum NativeCurrencyName {
   GNOSIS = 'XDAI',
   MOONBEAM = 'GLMR',
   BNB = 'BNB',
-  AVAX = 'AVAX',
+  AVAX = 'AVAX'
 }

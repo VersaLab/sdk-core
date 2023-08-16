@@ -145,7 +145,7 @@ const BASE_GOERLI_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x8357227D4eDc78991Db6FDB9bD6ADE250536dE1d'
 }
 
-const SCROLL_TESTNET_ADDRESSES: ChainAddresses = {
+const SCROLL_ALPHA_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0x6E7E0d996eF50E289af9BFd93f774C566F014660',
   multicallAddress: '0x2117f703867a2B7E6813c7e5Edd96bf9a8d8eC30',
   quoterAddress: '0xbf1c1FE1e9e900aFd5ba2Eb67480c44266D5eD84',
@@ -153,6 +153,16 @@ const SCROLL_TESTNET_ADDRESSES: ChainAddresses = {
   nonfungiblePositionManagerAddress: '0xdbb991616CE0E6a0553258bd34bC1478042C03C2',
   tickLensAddress: '0xf39a3f98Bc7e03cB9A8dBF8246B8C66a1A5c025F',
   swapRouter02Address: '0xD9880690bd717189cC3Fbe7B9020F27fae7Ac76F'
+}
+
+const SCROLL_SEPOLIA_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0xB856587fe1cbA8600F75F1b1176E44250B11C788',
+  multicallAddress: '0x8c181f4B9040F1a2C941EfD3b608712cF86F1957',
+  quoterAddress: '0xd5dd33650Ef1DC6D23069aEDC8EAE87b0D3619B2',
+  v3MigratorAddress: '0x38E33D067F03a5cDc02C301b2c306cb0414549Bf',
+  nonfungiblePositionManagerAddress: '0xbbAd0e891922A8A4a7e9c39d4cc0559117016fec',
+  tickLensAddress: '0x9804Da978427a49929f2E6Ea32A9594F03f9296e',
+  swapRouter02Address: '0x17AFD0263D6909Ba1F9a8EAC697f76532365Fb95'
 }
 
 export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses> = {
@@ -171,7 +181,8 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.AVALANCHE]: AVALANCHE_ADDRESSES,
   [ChainId.BASE]: BASE_ADDRESSES,
   [ChainId.BASE_GOERLI]: BASE_GOERLI_ADDRESSES,
-  [ChainId.SCROLL_TESTNET]: SCROLL_TESTNET_ADDRESSES
+  [ChainId.SCROLL_ALPHA]: SCROLL_ALPHA_ADDRESSES,
+  [ChainId.SCROLL_SEPOLIA]: SCROLL_SEPOLIA_ADDRESSES
 }
 
 /* V3 Contract Addresses */
@@ -272,7 +283,7 @@ export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = SUPPORTED_CHAINS.redu
 }, {})
 
 export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
-  if (chainId == ChainId.BNB || chainId == ChainId.SCROLL_TESTNET) {
+  if (chainId == ChainId.BNB || chainId == ChainId.SCROLL_ALPHA || chainId == ChainId.SCROLL_SEPOLIA) {
     return CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address
   }
   return '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45'
