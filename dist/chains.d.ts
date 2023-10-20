@@ -16,10 +16,11 @@ export declare enum ChainId {
     AVALANCHE = 43114,
     BASE_GOERLI = 84531,
     BASE = 8453,
+    SCROLL = 534352,
     SCROLL_ALPHA = 534353,
     SCROLL_SEPOLIA = 534351
 }
-export declare const SUPPORTED_CHAINS: readonly [ChainId.MAINNET, ChainId.OPTIMISM, ChainId.OPTIMISM_GOERLI, ChainId.ARBITRUM_ONE, ChainId.ARBITRUM_GOERLI, ChainId.POLYGON, ChainId.POLYGON_MUMBAI, ChainId.GOERLI, ChainId.SEPOLIA, ChainId.CELO_ALFAJORES, ChainId.CELO, ChainId.BNB, ChainId.AVALANCHE, ChainId.BASE, ChainId.BASE_GOERLI, ChainId.SCROLL_ALPHA, ChainId.SCROLL_SEPOLIA];
+export declare const SUPPORTED_CHAINS: readonly [ChainId.MAINNET, ChainId.OPTIMISM, ChainId.OPTIMISM_GOERLI, ChainId.ARBITRUM_ONE, ChainId.ARBITRUM_GOERLI, ChainId.POLYGON, ChainId.POLYGON_MUMBAI, ChainId.GOERLI, ChainId.SEPOLIA, ChainId.CELO_ALFAJORES, ChainId.CELO, ChainId.BNB, ChainId.AVALANCHE, ChainId.BASE, ChainId.BASE_GOERLI, ChainId.SCROLL, ChainId.SCROLL_ALPHA, ChainId.SCROLL_SEPOLIA];
 export declare type SupportedChainsType = typeof SUPPORTED_CHAINS[number];
 export declare enum NativeCurrencyName {
     ETHER = "ETH",

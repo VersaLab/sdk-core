@@ -16,6 +16,7 @@ export enum ChainId {
   AVALANCHE = 43114,
   BASE_GOERLI = 84531,
   BASE = 8453,
+  SCROLL = 534352,
   SCROLL_ALPHA = 534353,
   SCROLL_SEPOLIA = 534351
 }
@@ -36,6 +37,7 @@ export const SUPPORTED_CHAINS = [
   ChainId.AVALANCHE,
   ChainId.BASE,
   ChainId.BASE_GOERLI,
+  ChainId.SCROLL,
   ChainId.SCROLL_ALPHA,
   ChainId.SCROLL_SEPOLIA
 ] as const

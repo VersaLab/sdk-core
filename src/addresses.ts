@@ -153,6 +153,16 @@ const BASE_GOERLI_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x8357227D4eDc78991Db6FDB9bD6ADE250536dE1d'
 }
 
+const SCROLL_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x70C62C8b8e801124A4Aa81ce07b637A3e83cb919',
+  multicallAddress: '0xC1D2e074C38FdD5CA965000668420C80316F0915',
+  quoterAddress: '0x2566e082Cb1656d22BCbe5644F5b997D194b5299',
+  v3MigratorAddress: '0xF00577B5Dd0DA227298E954Ed11356F264Cf93d4',
+  nonfungiblePositionManagerAddress: '0xB39002E4033b162fAc607fc3471E205FA2aE5967',
+  tickLensAddress: '0x85780e12e90D2a684eB8E7404c985b5B5c8ce7E9',
+  swapRouter02Address: '0xfc30937f5cDe93Df8d48aCAF7e6f5D8D8A31F636'
+}
+
 const SCROLL_ALPHA_ADDRESSES: ChainAddresses = {
   v3CoreFactoryAddress: '0x6E7E0d996eF50E289af9BFd93f774C566F014660',
   multicallAddress: '0x2117f703867a2B7E6813c7e5Edd96bf9a8d8eC30',
@@ -189,6 +199,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.AVALANCHE]: AVALANCHE_ADDRESSES,
   [ChainId.BASE]: BASE_ADDRESSES,
   [ChainId.BASE_GOERLI]: BASE_GOERLI_ADDRESSES,
+  [ChainId.SCROLL]: SCROLL_ADDRESSES,
   [ChainId.SCROLL_ALPHA]: SCROLL_ALPHA_ADDRESSES,
   [ChainId.SCROLL_SEPOLIA]: SCROLL_SEPOLIA_ADDRESSES
 }
@@ -291,7 +302,12 @@ export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = SUPPORTED_CHAINS.redu
 }, {})
 
 export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) => {
-  if (chainId == ChainId.BNB || chainId == ChainId.SCROLL_ALPHA || chainId == ChainId.SCROLL_SEPOLIA) {
+  if (
+    chainId == ChainId.BNB ||
+    chainId == ChainId.SCROLL ||
+    chainId == ChainId.SCROLL_ALPHA ||
+    chainId == ChainId.SCROLL_SEPOLIA
+  ) {
     return CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address
   }
   return '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45'
