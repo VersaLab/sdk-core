@@ -1,3 +1,4 @@
+import { BigNumber } from '@ethersproject/bignumber';
 import { BaseCurrency } from './baseCurrency';
 import { Currency } from './currency';
 /**
@@ -11,6 +12,12 @@ export declare class Token extends BaseCurrency {
      */
     readonly address: string;
     /**
+     * Relevant for fee-on-transfer (FOT) token taxes,
+     * Not every ERC20 token is FOT token, so this field is optional
+     */
+    readonly buyFeeBps?: BigNumber;
+    readonly sellFeeBps?: BigNumber;
+    /**
      *
      * @param chainId {@link BaseCurrency#chainId}
      * @param address The contract address on the chain on which this token lives
@@ -18,8 +25,10 @@ export declare class Token extends BaseCurrency {
      * @param symbol {@link BaseCurrency#symbol}
      * @param name {@link BaseCurrency#name}
      * @param bypassChecksum If true it only checks for length === 42, startsWith 0x and contains only hex characters
+     * @param buyFeeBps Buy fee tax for FOT tokens, in basis points
+     * @param sellFeeBps Sell fee tax for FOT tokens, in basis points
      */
-    constructor(chainId: number, address: string, decimals: number, symbol?: string, name?: string, bypassChecksum?: boolean);
+    constructor(chainId: number, address: string, decimals: number, symbol?: string, name?: string, bypassChecksum?: boolean, buyFeeBps?: BigNumber, sellFeeBps?: BigNumber);
     /**
      * Returns true if the two tokens are equivalent, i.e. have the same chainId and address.
      * @param other other token to compare

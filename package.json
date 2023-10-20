@@ -16,9 +16,7 @@
   "module": "dist/sdk-core.esm.js",
   "scripts": {
     "build": "tsdx build",
-    "start": "tsdx watch",
-    "test": "tsdx test",
-    "prepublishOnly": "tsdx build"
+    "test": "tsdx test"
   },
   "dependencies": {
     "@ethersproject/address": "^5.0.2",
