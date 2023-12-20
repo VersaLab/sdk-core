@@ -145,7 +145,8 @@ var ARBITRUM_GOERLI_ADDRESSES = {
   quoterAddress: '0x1dd92b83591781D0C6d98d07391eea4b9a6008FA',
   v3MigratorAddress: '0xA815919D2584Ac3F76ea9CB62E6Fd40a43BCe0C3',
   nonfungiblePositionManagerAddress: '0x622e4726a167799826d1E1D150b076A7725f5D81',
-  tickLensAddress: '0xb52429333da969a0C79a60930a4Bf0020E5D1DE8'
+  tickLensAddress: '0xb52429333da969a0C79a60930a4Bf0020E5D1DE8',
+  swapRouter02Address: '0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad'
 };
 var OPTIMISM_GOERLI_ADDRESSES = {
   v3CoreFactoryAddress: '0xB656dA17129e7EB733A557f4EBc57B76CFbB5d10',
@@ -153,7 +154,8 @@ var OPTIMISM_GOERLI_ADDRESSES = {
   quoterAddress: '0x9569CbA925c8ca2248772A9A4976A516743A246F',
   v3MigratorAddress: '0xf6c55fBe84B1C8c3283533c53F51bC32F5C7Aba8',
   nonfungiblePositionManagerAddress: '0x39Ca85Af2F383190cBf7d7c41ED9202D27426EF6',
-  tickLensAddress: '0xe6140Bd164b63E8BfCfc40D5dF952f83e171758e'
+  tickLensAddress: '0xe6140Bd164b63E8BfCfc40D5dF952f83e171758e',
+  swapRouter02Address: '0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad'
 };
 var BASE_GOERLI_ADDRESSES = {
   v3CoreFactoryAddress: '0x9323c1d6D800ed51Bd7C6B216cfBec678B7d0BC2',
@@ -297,7 +299,7 @@ var MIXED_ROUTE_QUOTER_V1_ADDRESSES = /*#__PURE__*/SUPPORTED_CHAINS.reduce(funct
   return memo;
 }, {});
 var SWAP_ROUTER_02_ADDRESSES = function SWAP_ROUTER_02_ADDRESSES(chainId) {
-  if (chainId == exports.ChainId.SCROLL_SEPOLIA || chainId == exports.ChainId.BASE_GOERLI || chainId == exports.ChainId.SCROLL || chainId == exports.ChainId.BASE || chainId == exports.ChainId.BNB || chainId == exports.ChainId.SCROLL_ALPHA) {
+  if (chainId == exports.ChainId.SCROLL_SEPOLIA || chainId == exports.ChainId.ARBITRUM_GOERLI || chainId == exports.ChainId.OPTIMISM_GOERLI || chainId == exports.ChainId.BASE_GOERLI || chainId == exports.ChainId.SCROLL || chainId == exports.ChainId.BASE || chainId == exports.ChainId.BNB || chainId == exports.ChainId.SCROLL_ALPHA) {
     return CHAIN_TO_ADDRESSES_MAP[chainId].swapRouter02Address;
   }
   return '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45';
