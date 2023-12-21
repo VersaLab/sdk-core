@@ -155,7 +155,7 @@ var OPTIMISM_GOERLI_ADDRESSES = {
   v3MigratorAddress: '0xf6c55fBe84B1C8c3283533c53F51bC32F5C7Aba8',
   nonfungiblePositionManagerAddress: '0x39Ca85Af2F383190cBf7d7c41ED9202D27426EF6',
   tickLensAddress: '0xe6140Bd164b63E8BfCfc40D5dF952f83e171758e',
-  swapRouter02Address: '0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad'
+  swapRouter02Address: '0x8eaeE809112c8DEc018e568FD8D0D0144863bc44'
 };
 var BASE_GOERLI_ADDRESSES = {
   v3CoreFactoryAddress: '0x9323c1d6D800ed51Bd7C6B216cfBec678B7d0BC2',
